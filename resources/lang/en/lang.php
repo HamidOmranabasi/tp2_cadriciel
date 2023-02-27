@@ -50,5 +50,8 @@ return [
     //Marcos Vinicius Sanchez
     'forMVS'       => 'Just for',
     'user'         => 'User',
-    'pass'         => 'Password'
+    'pass'         => 'Password',
+    
+    //Footer
+    'copyRight'       => 'All rights reserved | This template is made with'
 ];

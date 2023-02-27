@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-12 text-center mt-2">
             <h1 class="display-one ">
-                Modiffication l'article
+                Modiffication le fichier
             </h1>
         </div>
     </div>
@@ -17,7 +17,7 @@
                 <form method="post">
                     @csrf
                     @method('put')
-                    <div class="card-header">Veuillez modiffier l'article:</div>
+                    <div class="card-header">Veuillez modiffier ce fichier</div>
                     <div class="card-body">
                         <div class="control-group col-12">
                             <label for="title">Titre du message</label>

@@ -13,6 +13,8 @@ class Fichier extends Model
         'titre',
         'titre_fr',
         'path',
-        'etudientsId'
+        'etudientsId',
+        'ext',
+        'size'
     ];
 }

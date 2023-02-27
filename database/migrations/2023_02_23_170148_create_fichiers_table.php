@@ -18,6 +18,8 @@ class CreateFichiersTable extends Migration
             $table->text('titre', 10);
             $table->text('titre_fr', 10);
             $table->text('path',100);
+            $table->text('ext',10);
+            $table->float('size');
             $table->integer('etudientsId');
             $table->foreign('etudientsId')->references('id')->on('etudients');
             $table->timestamps();

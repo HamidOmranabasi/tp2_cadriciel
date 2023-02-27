@@ -34,7 +34,7 @@
                                         <tr>
                                             <td>{{ $loop->index+1 }}</td>
                                             <td>{{ $file->titre }}</td>
-                                            <td>{{ $file->type }}</td>
+                                            <td>{{ $file->ext }}</td>
                                             <td>{{ $file->size }} k</td>
                                             <td><a href="{{ route('file.detaile', $file->id)}}" class="btn btn-success btn-sm">@lang('lang.btn_download')</a></td>
                                             @if(Auth::user()-> id == $file->etudientsId)

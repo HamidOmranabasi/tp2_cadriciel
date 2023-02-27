@@ -15,7 +15,7 @@ class ForumPostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()    {
+    public function indexAll()    {
         $blogs = ForumPost::all();
         return view('forum.index', ['blogs' => $blogs]);
     }
@@ -25,7 +25,7 @@ class ForumPostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index2()    {
+    public function index()    {
         $blogs = ForumPost::select()->paginate(8);
         return view('forum.index', ['blogs' => $blogs]);
     }

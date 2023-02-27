@@ -22,7 +22,7 @@ return [
     'authrArticle'    => 'Nom d\'auther',
     'detaiArticle'    => 'Détails de l\'article',
     'showArticle'     => 'Lire l\'article',
-    'btn_editable'    => 'Editer',
+    'btn_editable'    => 'Modiffier',
 
     //Éléments de page files.index
     'listFiles'       => 'Liste des fichier',
@@ -50,5 +50,8 @@ return [
     //Marcos Vinicius Sanchez
     'forMVS'          => 'Juste pour',
     'user'            => 'Utilisateur',
-    'pass'            => 'Mot de passe'
+    'pass'            => 'Mot de passe',
+
+    //Footer
+    'copyRight'       => 'Tous droits réservés | Ce modèle est fait avec'
 ];
