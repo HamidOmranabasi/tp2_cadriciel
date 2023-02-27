@@ -29,7 +29,12 @@ return [
     'addFiles'        => 'Ajouter un fichier',
     'titleFile'       => 'Titre de fichier',
     'btn_download'    => 'Télécharger',
+    'labelFName'      =>  'Titre',
     'typeFile'        => 'Type du fichier',
+
+    //Files.ajoute page
+    'fileTitle'   => 'Entrez le titre du fichier (Obligatoire)',
+    'btn_save'        => 'Enregistrer',
 
     //Éléments de formulaires
     'email'           => 'Adresse courriel',

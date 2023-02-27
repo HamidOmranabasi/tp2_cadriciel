@@ -17,10 +17,12 @@
                  <form action="" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group mt-4">
-                    <input type="file" name="file" class="form-control" accept=".zip,.doc,.pdf">
-            </div>
+                    <label for="fileName">@lang('lang.labelFName')</label>
+                            <input type="text" name="fileName" id="fileName" class="form-control fileName" placeholder="@lang('lang.fileTitle')" require>
+                        <input type="file" name="file" class="form-control" accept=".zip,.doc,.pdf">
+                    </div>
 
-            <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">Save</button>
+            <button class="w-100 btn btn-lg btn-primary mt-4" type="submit">@lang('lang.btn_save')</button>
         </form>
             </div>
         </div>

@@ -29,7 +29,12 @@ return [
     'addFiles'    => 'Add a file',
     'titleFile'   => 'File Title',
     'btn_download'=> 'Download',
+    'labelFName'  =>  'Title',
     'typeFile'    => 'File type',
+
+    //Files.ajoute page
+    'fileTitle'   => 'Enter file title (Mandatory)',
+    'btn_save'    => 'Save file',
 
     //Forms elements
     'email'       => 'Email',

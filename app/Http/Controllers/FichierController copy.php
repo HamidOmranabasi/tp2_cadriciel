@@ -17,7 +17,8 @@ class FichierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()    {
+    public function indexAll()    {
+        $files = Fichier::all();
         echo $files;
         return view('files.index', ['files' => $files]);
     }
@@ -28,7 +29,7 @@ class FichierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()    {
-        $files = Fichier::select2()->paginate(8);
+        $files = Fichier::select()->paginate(8);
         return view('files.index', ['files' => $files]);
     }
 
@@ -49,28 +50,23 @@ class FichierController extends Controller
  */
 public function store(Request $request){
 
+    $fileName = Auth::id() . '_' . time() . '.'. $request->file->extension();  
+    $type = $request->file->getClientMimeType();
+    $size = $request->file->getSize();
+    $path ='public/files/'.Auth::id();
+    $request->file->move(public_path('files/'.Auth::id()), $fileName);
+
     echo $request;
 
-    // $fileName = Auth::id() . '_' . time() . '.'. $request->file->extension();  
-    // echo "FileName: ".$fileName;
-    // $type = $request->file->getClientMimeType();
-    // echo "<br>FileType: ".$type;
-    // $size = $request->file->getSize();
-    // echo "<br>FileType: ".$size;
-    // $path ='public/file/'.Auth::id();
-    // $request->file->move(public_path('file/'.Auth::id()), $fileName);
+    Fichier::create([
+        'etudientsId' => Auth::id(),
+        'titre' => $fileName,
+        'path'  => $path,
+        'type' => $type,
+        'size' => $size
+        ]);
 
-    // echo $request;
-
-    // Fichier::create([
-    //     'etudientsId' => Auth::id(),
-    //     'titre' => $request->fileName,
-    //     'path'  => $path,
-    //     'type' => $type,
-    //     'size' => $size
-    //     ]);
-
-    //     return redirect()->route('depot.index')->withSuccess(__('File added successfully.'));
+        return redirect()->route('depot.index')->withSuccess(__('File added successfully.'));
     }
 
     /**
