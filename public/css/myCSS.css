@@ -1,0 +1,78 @@
+.x {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50ch;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+            line-clamp: 1; 
+    -webkit-box-orient: vertical;
+  }
+
+  .resumeContenu {
+    text-align: left;
+    text-overflow: calc(10ch);
+    text-overflow: ellipsis;
+  }
+
+  .mth{
+    margin-top: 50px;
+  }
+
+  .menuPrinc {
+    background-color: #fdd360 !important;
+  }
+
+  .avatar {
+    margin-right: 50px;
+    display: flex;   
+    align-items: center;
+  }
+
+  .avatar span {
+    margin-left: 10px;
+    font-size: 1.7rem;
+  }
+
+  .avatar img{
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
+  }
+  
+  #navbarSupportedContent li>a{
+    font-size: 1.2rem;
+  }
+
+  #Marcos{
+    padding: 15px;
+    text-align: center;
+    background-color: #fdd360;
+    color: brown;
+  }
+
+  #Marcos p {
+    font-size: 1.3rem;
+  }
+
+  .elmMenu{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin:  0 20px;
+  }
+
+  li a {
+    padding: 0 10px !important;
+  }
+
+  li:hover {
+    color: #fdd360;
+    background-color: black;
+  }
+
+  .alert {
+    border: 2px dashed rgb(17, 17, 85);
+    color: rgb(141, 52, 52);
+    background-color: rgb(206, 202, 202);
+    border-radius: 15px;
+  }
