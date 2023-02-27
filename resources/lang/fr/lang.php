@@ -28,6 +28,8 @@ return [
     'listFiles'       => 'Liste des fichier',
     'addFiles'        => 'Ajouter un fichier',
     'titleFile'       => 'Titre de fichier',
+    'btn_download'    => 'Télécharger',
+    'typeFile'        => 'Type du fichier',
 
     //Éléments de formulaires
     'email'           => 'Adresse courriel',

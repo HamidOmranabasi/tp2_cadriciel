@@ -6,6 +6,8 @@ use App\Models\Fichier;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\UploadedFile;
+use App\Http\Requests\StoreFileRequest;
 
 class FichierController extends Controller
 {
@@ -15,7 +17,7 @@ class FichierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()    {
+    public function indexAll()    {
         $files = Fichier::all();
         echo $files;
         return view('files.index', ['files' => $files]);
@@ -26,9 +28,9 @@ class FichierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index2()    {
+    public function index()    {
         $files = Fichier::select()->paginate(8);
-        return view('files.index', ['fichiers' => $files]);
+        return view('files.index', ['files' => $files]);
     }
 
     /**
@@ -37,7 +39,7 @@ class FichierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view('files.ajoutArticle');
+        return view('files.ajouteFile');
     }
 
 /**
@@ -47,17 +49,27 @@ class FichierController extends Controller
  * @return \Illuminate\Http\Response
  */
 public function store(Request $request){
-        //return $request;
-        $newFile = File::create([
-            'titre' => $request->titre,
-            'contenu'  => $request->contenu,
-            'titre_fr' => $request->titre,
-            'contenu_fr'  => $request->contenu,
-            'etudientsId' => Auth::user()->id,
-            'date' => now()
+
+    $fileName = Auth::id() . '_' . time() . '.'. $request->file->extension();  
+    echo "FileName: ".$fileName;
+    $type = $request->file->getClientMimeType();
+    echo "<br>FileType: ".$type;
+    $size = $request->file->getSize();
+    echo "<br>FileType: ".$size;
+    $path ='public/files/'.Auth::id();
+    $request->file->move(public_path('files/'.Auth::id()), $fileName);
+
+    echo $request;
+
+    Fichier::create([
+        'etudientsId' => Auth::id(),
+        'titre' => $fileName,
+        'path'  => $path,
+        'type' => $type,
+        'size' => $size
         ]);
 
-        return redirect(route('files.show', $newFile->id));
+        return redirect()->route('depot.index')->withSuccess(__('File added successfully.'));
     }
 
     /**

@@ -41,6 +41,9 @@ use App\Http\Controllers\LocalizationController;
 
 /* -Routes du répertoire de documents- */
     Route::get('files', [FichierController::class, 'index'])->name('depot.index')->middleware('auth');
+    Route::get('files/{fileId}', [FichierController::class, 'index'])->name('file.detaile')->middleware('auth');
+    Route::get('file-upload' ,[FichierController::class,'create'])->name('file.ajoute')->middleware('auth');
+    Route::post('file-upload',[FichierController::class,'store'])->name('file.store')->middleware('auth');
 
 /* -Routes du langage- */
     Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('lang');

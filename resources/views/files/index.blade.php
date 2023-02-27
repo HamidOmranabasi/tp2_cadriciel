@@ -13,7 +13,7 @@
                         </div>
                         <br><br>
                         <div class="col-md-4">
-                        <a href="{{ route('forum.create')}}" class="btn btn-info">@lang('lang.addFiles')</a>
+                        <a href="{{ route('file.ajoute')}}" class="btn btn-info">@lang('lang.addFiles')</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -21,17 +21,28 @@
                                 <tr>
                                     <th scope="col">#</th>
                                         <th scope="col">@lang('lang.titleFile')</th>
-                                        <th scope="col">@lang('lang.authrFile')</th>
+                                        <th scope="col">@lang('lang.typeFile')</th>
+                                        <th scope="col">Size</th>
+                                        <th scope="col">@lang('lang.btn_download')</th>
                                         <th>Modification</th>
                                     </tr>
                                 </thead>
                                 
                                 <tbody>
                                     @forelse($files as $file)
+
                                         <tr>
                                             <td>{{ $loop->index+1 }}</td>
                                             <td>{{ $file->titre }}</td>
+                                            <td>{{ $file->type }}</td>
+                                            <td>{{ $file->size }} k</td>
+                                            <td><a href="{{ route('file.detaile', $file->id)}}" class="btn btn-success btn-sm">@lang('lang.btn_download')</a></td>
+                                            @if(Auth::user()-> id == $file->etudientsId)
+                                                <td><a href="{{ route('file.detaile', $file->id)}}" class="btn btn-primary btn-sm">@lang('lang.btn_editable')</a></td>
+                                                @else
+                                                <td><a href="{{ route('file.detaile', $file->id)}}" class="btn btn-light disabled barre">@lang('lang.btn_editable')</a></td>
 
+                                            @endif
                                             @empty
                                                 <td>Aucun file trouvé !</td>
                                         </tr>

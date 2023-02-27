@@ -28,6 +28,8 @@ return [
     'listFiles'   => 'List of all files',
     'addFiles'    => 'Add a file',
     'titleFile'   => 'File Title',
+    'btn_download'=> 'Download',
+    'typeFile'    => 'File type',
 
     //Forms elements
     'email'       => 'Email',
