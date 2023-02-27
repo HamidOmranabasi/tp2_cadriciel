@@ -20,6 +20,7 @@ class ForumPostController extends Controller
         return view('forum.index', ['blogs' => $blogs]);
     }
     
+    
     /**
      * Display a listing of the resource.
      *

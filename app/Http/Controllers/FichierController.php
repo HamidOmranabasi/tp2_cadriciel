@@ -22,6 +22,7 @@ class FichierController extends Controller
         return view('files.index', ['files' => $files]);
     }
     
+    
     /**
      * Display a listing of the resource.
      *
