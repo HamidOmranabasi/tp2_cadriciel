@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class FichierController extends Controller
+class FileController extends Controller
 {
     
     /**
@@ -15,9 +15,8 @@ class FichierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()    {
-        $files = Fichier::all();
-        echo $files;
+    public function indexAll()    {
+        $fichiers = Fichier::all();
         return view('files.index', ['files' => $files]);
     }
     
@@ -26,8 +25,8 @@ class FichierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index2()    {
-        $files = Fichier::select()->paginate(8);
+    public function index()    {
+        $files = File::select()->paginate(8);
         return view('files.index', ['fichiers' => $files]);
     }
 

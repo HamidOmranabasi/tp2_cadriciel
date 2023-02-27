@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fichier;
+use App\Models\ForumPost;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class FichierController extends Controller
+class ForumPostController extends Controller
 {
     
     /**
@@ -15,9 +15,8 @@ class FichierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()    {
-        $files = Fichier::all();
-        echo $files;
+    public function indexAll()    {
+        $fichiers = Fichier::all();
         return view('files.index', ['files' => $files]);
     }
     
@@ -26,9 +25,9 @@ class FichierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index2()    {
-        $files = Fichier::select()->paginate(8);
-        return view('files.index', ['fichiers' => $files]);
+    public function index()    {
+        $fichiers = ForumPost::select()->paginate(8);
+        return view('files.index', ['fichiers' => $fichiers]);
     }
 
     /**
@@ -48,7 +47,7 @@ class FichierController extends Controller
  */
 public function store(Request $request){
         //return $request;
-        $newFile = File::create([
+        $newPost = ForumPost::create([
             'titre' => $request->titre,
             'contenu'  => $request->contenu,
             'titre_fr' => $request->titre,
@@ -57,7 +56,7 @@ public function store(Request $request){
             'date' => now()
         ]);
 
-        return redirect(route('files.show', $newFile->id));
+        return redirect(route('files.show', $newPost->id));
     }
 
     /**
@@ -66,8 +65,8 @@ public function store(Request $request){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(File $file){
-        return view('files.detaile', ['file' => $file]);
+    public function show(ForumPost $forumPost){
+        return view('files.detaile', ['forumPost' => $forumPost]);
     }
 
     /**
@@ -76,8 +75,8 @@ public function store(Request $request){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(File $file){
-        return view('files.modif', ['post' => $file]);
+    public function edit(ForumPost $forumPost){
+        return view('files.modif', ['post' => $forumPost]);
     }
 
     /**
@@ -87,12 +86,12 @@ public function store(Request $request){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, File $file)    {
-        $file->update([
+    public function update(Request $request, ForumPost $forumPost)    {
+        $forumPost->update([
              'titre' => $request->titre,
              'contenu' => $request->contenu
          ]);
-        return redirect(route('files.show', $file->id));
+        return redirect(route('files.show', $forumPost->id));
     }
 
     /**
@@ -101,15 +100,15 @@ public function store(Request $request){
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(File $file){
-        $file->delete();
+    public function destroy(ForumPost $forumPost){
+        $forumPost->delete();
 
         return redirect(route('files.index'));
     }
 
     public function page(){
-        $fichierPost = file::select()
+        $fichierPost = forumPost::select()
                 ->paginate(8);
-        return view('page.page', ['files' => $files]);
+        return view('page.page', ['forumPosts' => $forumPosts]);
     }
 }

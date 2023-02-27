@@ -43,6 +43,10 @@
     font-size: 1.2rem;
   }
 
+  .barre {
+    text-decoration:line-through; 
+  }
+
   #Marcos{
     padding: 15px;
     text-align: center;

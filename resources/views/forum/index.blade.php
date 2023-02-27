@@ -36,12 +36,12 @@
                                             <td><a href="{{ route('forum.show', $blog->id)}}" class="">@lang('lang.showArticle')</a></td>
                                             <div hidden>
                                                 @if(Auth::user()-> id != $blog->postHasUser-> id)
-                                                    {{ $editable = "disabled btn-light" }}
+                                                    {{ $editable = "disabled btn-light barre" }}
                                                 @else
                                                     {{ $editable = "" }}
                                                 @endif
                                             </div>
-                                            <td><a href="{{ route('forum.show', $blog->id)}}" class="btn btn-primary btn-sm {{$editable}}">Editer</a></td>
+                                            <td><a href="{{ route('forum.show', $blog->id)}}" class="btn btn-primary btn-sm {{$editable}}">@lang('lang.btn_editable')</a></td>
                                             @empty
                                                 <td>Aucun article trouvé !</td>
                                         </tr>

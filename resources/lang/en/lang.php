@@ -14,14 +14,20 @@ return [
     'goToForum'    => 'Visit the Forum',
     'goToDir'      => 'Visit the file directory',
     
-    //Home page forum
+    //Home page , forum page
     'addArticle'   => 'Add an article',
     'listArticle'  => 'List of all articles',
     'msgArticle'   => 'Please click on each item to find details',
     'titleArticle' => 'Title  of article',
     'authrArticle' => 'Auther\'s name',
     'detaiArticle' => 'Article detailes',
-    'showArticle'  => 'More details',
+    'showArticle'  => 'Read Artticle',
+    'btn_editable'    => 'Edit',
+
+    //Files.index page
+    'listFiles'   => 'List of all files',
+    'addFiles'    => 'Add a file',
+    'titleFile'   => 'File Title',
 
     //Forms elements
     'email'       => 'Email',

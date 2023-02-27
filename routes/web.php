@@ -40,7 +40,7 @@ use App\Http\Controllers\LocalizationController;
     Route::delete('forum/{forumPost}', [ForumPostController::class, 'destroy'])->middleware('auth');
 
 /* -Routes du répertoire de documents- */
-    Route::get('depot', [FichierController::class, 'index'])->name('depot.index')->middleware('auth');
+    Route::get('files', [FichierController::class, 'index'])->name('depot.index')->middleware('auth');
 
 /* -Routes du langage- */
     Route::get('/lang/{locale}', [LocalizationController::class, 'index'])->name('lang');
