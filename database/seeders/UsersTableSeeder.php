@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
             'name' => 'Hamid',
             'email' => 'hami@gmail.com',
             'password' => Hash::make('123456'),
-            'adresse' => '', // این خط اضافه شد
-            'phone' => '',   // اگر phone هم NOT NULL است
+            'adresse' => '', 
+            'phone' => '',   
             'date_de_naissance' => '2000-01-01',
             'created_at' => now(),
             'updated_at' => now(),
