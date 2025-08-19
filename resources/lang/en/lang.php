@@ -53,5 +53,12 @@ return [
     'pass'         => 'Password',
     
     //Footer
+<<<<<<< HEAD
     'copyRight'       => 'All rights reserved | This template is made with'
+=======
+    'copyRight'       => 'All rights reserved | This template is made with',
+
+    //Alert
+    'steps'           => 'Make sure you have completed all the steps mentioned.'
+>>>>>>> 20d2e20 (Fix Login issue)
 ];

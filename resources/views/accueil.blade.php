@@ -65,7 +65,11 @@
                             <br>
                             <div id="Marcos">
                                 <p>@lang('lang.forMVS') Marcos Sanches:</p>
+<<<<<<< HEAD
                                 <p>@lang('lang.user'): good4college.com@gmail.com</p>
+=======
+                                <p>@lang('lang.user'): Marcos@good4college.com</p>
+>>>>>>> 20d2e20 (Fix Login issue)
                                 <p>@lang('lang.pass'): 123456</p>
                             </div>
                             

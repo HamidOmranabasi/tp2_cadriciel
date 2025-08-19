@@ -53,5 +53,12 @@ return [
     'pass'            => 'Mot de passe',
 
     //Footer
+<<<<<<< HEAD
     'copyRight'       => 'Tous droits réservés | Ce modèle est fait avec'
+=======
+    'copyRight'       => 'Tous droits réservés | Ce modèle est fait avec',
+
+    //Alert
+    'steps'           => 'Assurez-vous d\’avoir complété toutes les étapes mentionnées.'
+>>>>>>> 20d2e20 (Fix Login issue)
 ];

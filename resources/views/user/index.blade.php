@@ -49,9 +49,13 @@
                         </form>
                         <br>
                         <div id="Marcos">
+<<<<<<< HEAD
                             <p>@lang('lang.forMVS') Marcos Sanches:</p>
                             <p>@lang('lang.user'): good4college.com@gmail.com</p>
                             <p>@lang('lang.pass'): 123456</p>
+=======
+                            <p>@lang('lang.steps') </p>
+>>>>>>> 20d2e20 (Fix Login issue)
                         </div>
                     </div>
                 </div>
